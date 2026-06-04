@@ -96,20 +96,5 @@ def search():
     return render_template("index.html", movies=results)
 
 
-
-@app.route("/streaming")
-def streaming():
-    conn = db()
-    data = conn.execute("""
-        SELECT movies.title, streaming_services.name
-        FROM movies
-        JOIN available_on ON movies.movie_id = available_on.movie_id
-        JOIN streaming_services ON streaming_services.service_id = available_on.service_id
-    """).fetchall()
-    conn.close()
-
-    return render_template("streaming.html", data=data)
-
-
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
