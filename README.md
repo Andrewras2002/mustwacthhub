@@ -18,6 +18,8 @@ http://127.0.0.1:5000/
 
 The application should now be running.
 
+If you can´t access change the port in app.py. 
+
 ## Using the Application
 
 * Browse the list of movies on the front page.
