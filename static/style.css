@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background: #121212;
+    color: white;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #bbbbbb;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin: 5px;
+}
+
+button {
+    background: #e50914;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #b00610;
+}
+
+.link-button {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.link-button:hover {
+    background: #555;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.movie-card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.movie-card h3 {
+    margin-top: 0;
+    color: #ffcc00;
+}
+
+.delete-button {
+    display: inline-block;
+    background:#e50914;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+}

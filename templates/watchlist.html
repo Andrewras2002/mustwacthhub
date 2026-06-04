@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Watchlist</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>My Watchlist 🍿</h1>
+
+<a class="link-button" href="/">Back to movies</a>
+
+<div class="movie-grid">
+    {% for item in watchlist %}
+    <div class="movie-card">
+        <h3>{{ item.title }}</h3>
+        <p><strong>Year:</strong> {{ item.year }}</p>
+        <p><strong>Genre:</strong> {{ item.genre }}</p>
+        <p><strong>Status:</strong> {{ item.status }}</p>
+
+        <p><strong>Your rating:</strong>
+            {% if item.personal_rating %}
+                {{ item.personal_rating }} ⭐
+            {% else %}
+                Not rated yet
+            {% endif %}
+        </p>
+
+        <p><strong>Review:</strong>
+            {% if item.review %}
+                {{ item.review }}
+            {% else %}
+                No review yet
+            {% endif %}
+        </p>
+
+        <form action="/rate_watchlist/{{ item.id }}" method="POST">
+            <select name="personal_rating">
+                <option value="">Rate filmen</option>
+                <option value="1">1 ⭐</option>
+                <option value="2">2 ⭐</option>
+                <option value="3">3 ⭐</option>
+                <option value="4">4 ⭐</option>
+                <option value="5">5 ⭐</option>
+            </select>
+
+            <input name="review" placeholder="Skriv review">
+
+            <button>Gem rating</button>
+        </form>
+
+        <br>
+
+        <a class="delete-button" href="/delete_watchlist/{{ item.id }}">Remove</a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
