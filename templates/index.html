@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Must WatchHub 🎬</h1>
+<h1>Must WatchHub </h1>
 <p class="subtitle">Find movies, add them to your watchlist, and search with regex.</p>
 
 <form action="/search" class="search-box">
@@ -26,7 +26,7 @@
         <p><strong>Year:</strong> {{ m.year }}</p>
         <p><strong>Genre:</strong> {{ m.genre }}</p>
         <p><strong>Runtime:</strong> {{ m.runtime }}</p>
-        <p><strong>IMDb Rating:</strong> {{ m.imdb_rating }} ⭐</p>
+        <p><strong>IMDb Rating:</strong> {{ m.imdb_rating }} </p>
 
         <form action="/add_watchlist/{{ m.movie_id }}" method="POST">
             <select name="status">
